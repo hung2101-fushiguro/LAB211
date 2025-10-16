@@ -136,15 +136,15 @@ public class CourseDao implements ICourseDao {
 
     @Override
     public boolean deleteCourseById(String id) throws SQLException {
-        boolean deleted = false;
+        //boolean deleted = false;
         try (Connection con = DBConnection.getConnection()) {
             PreparedStatement ps = con.prepareStatement(DELETE_COURSE);
             ps.setString(1, id);
-            deleted = ps.executeUpdate() > 0;
+            return ps.executeUpdate() > 0;
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return deleted;
+        return false;
     }
 
 }
