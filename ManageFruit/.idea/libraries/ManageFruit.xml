@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="ManageFruit">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/dist/ManageFruit.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

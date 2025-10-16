@@ -14,5 +14,4 @@ import java.util.List;
 public interface IFruitDao {
     void addFruit(Fruit fruit) throws SQLException;
     List<Fruit> getAllFruits();
-    
 }
