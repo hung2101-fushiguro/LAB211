@@ -12,6 +12,7 @@ import java.util.List;
  * @author DELL
  */
 public class Order {
+
     private String customerName;
     private List<OrderDetail> items = new ArrayList<>();
     private double total;
@@ -19,7 +20,8 @@ public class Order {
     public Order(String customerName) {
         this.customerName = customerName;
     }
-    public void addDetail(OrderDetail od){
+
+    public void addDetail(OrderDetail od) {
         items.add(od);
         total += od.getAmount();
     }
@@ -28,7 +30,7 @@ public class Order {
         return customerName;
     }
 
-    public List<OrderDetail> getItems() {
+    public List<OrderDetail> getDetails() {
         return items;
     }
 
@@ -40,13 +42,12 @@ public class Order {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("Customer: ").append(customerName).append("\n");
-        sb.append("Product     | Quantity | Price | Amount\n");
+        sb.append("Product       | Quantity | Price  | Amount\n");
         int i = 1;
-        for(OrderDetail od : items){
+        for (OrderDetail od : items) {
             sb.append(i++).append(". ").append(od.toString()).append("\n");
         }
         sb.append("Total: ").append(String.format("%.2f$", total)).append("\n");
         return sb.toString();
     }
-    
 }

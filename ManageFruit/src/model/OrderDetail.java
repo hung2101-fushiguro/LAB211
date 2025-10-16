@@ -14,10 +14,7 @@ public class OrderDetail {
     private int quantity;
     private double amount;
 
-    public OrderDetail() {
-    }
-
-    public OrderDetail(Fruit fruit, int quantity, double amount) {
+    public OrderDetail(Fruit fruit, int quantity) {
         this.fruit = fruit;
         this.quantity = quantity;
         this.amount = fruit.getFruit_price() * quantity;
@@ -27,29 +24,16 @@ public class OrderDetail {
         return fruit;
     }
 
-    public void setFruit(Fruit fruit) {
-        this.fruit = fruit;
-    }
-
     public int getQuantity() {
         return quantity;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
     }
 
     public double getAmount() {
         return amount;
     }
 
-    public void setAmount(double amount) {
-        this.amount = amount;
-    }
-
     @Override
     public String toString() {
-        return "OderDetail{" + "fruit=" + fruit + ", quantity=" + quantity + ", amount=" + amount + '}';
+        return String.format("%-10s | %8d | %5.2f$ | %5.2f$", fruit.getFruit_name(), quantity, fruit.getFruit_price(), amount);
     }
-
 }

@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 import model.Fruit;
 import model.Order;
+import model.OrderDetail;
 
 /**
  *
@@ -21,8 +22,9 @@ public class FruitShop {
     public void run() {
         addFruits();
         showFruits();
-        //shopping();
-        //viewOrder();
+        shopping();
+        viewOrders();
+        showFruits();
     }
 
     private void addFruits() {
@@ -44,6 +46,28 @@ public class FruitShop {
                     f.getFruit_price(),
                     f.getFruit_quantity(),
                     f.getFruit_origin());
+        }
+    }
+    
+    private void  shopping(){
+        
+        List<OrderDetail> bag = new ArrayList<>();
+        Order order1 = new Order("Son");
+        Fruit item1 = fruits.get(0);
+        int quantity1 = 10;
+        item1.setFruit_quantity(item1.getFruit_quantity() - quantity1);
+        bag.add(new OrderDetail(item1,quantity1));
+        for(OrderDetail od : bag){
+            order1.addDetail(od);
+        }
+        orders.add(order1);
+             
+    }
+    
+    private void viewOrders(){
+        System.out.println("Danh sach chi tiet mua hang:");
+        for(Order o : orders){
+            System.out.println(o);
         }
     }
 }
