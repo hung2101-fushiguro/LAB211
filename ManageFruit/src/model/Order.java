@@ -12,7 +12,7 @@ import java.util.List;
  * @author DELL
  */
 public class Order {
-
+    private int order_id;
     private String customerName;
     private List<OrderDetail> items = new ArrayList<>();
     private double total;
@@ -37,6 +37,23 @@ public class Order {
     public double getTotal() {
         return total;
     }
+
+    public int getOrder_id() {
+        return order_id;
+    }
+
+    public void setOrder_id(int order_id) {
+        this.order_id = order_id;
+    }
+
+    public List<OrderDetail> getItems() {
+        return items;
+    }
+
+    public void setItems(List<OrderDetail> items) {
+        this.items = items;
+    }
+    
 
     @Override
     public String toString() {
