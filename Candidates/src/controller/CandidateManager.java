@@ -53,6 +53,29 @@ public class CandidateManager {
         System.out.println("\n--- All candidates created ---");
         display();
     }
+    public void searchCandidates(){
+        if(list.isEmpty()){
+            System.out.println("Candidate list is empty!");
+            return;
+        }
+        display();
+        String searchName = Validation.getString("Enter candidates name(first or last)").toLowerCase();
+        int type = Validation.getInt("Enter type of candidate (0,1,2):",0 ,2);
+        System.out.println("\nThe candidate found:");
+        boolean found = false;
+        for(Candidates c : list){
+            if(c.getCandidateType() == type){
+                String fullName = c.getFirstName() +" " +c.getLastName();
+                if(fullName.toLowerCase().contains(searchName) || c.getFirstName().toLowerCase().contains(searchName) || c.getLastName().toLowerCase().contains(searchName)){
+                    System.out.println(c.toString());
+                    found = true;
+                }
+            }
+        }
+        if(!found){
+            System.out.println("No matching candidate found.");
+        }
+    }
     private void display(){
         System.out.println("List of candidates:");
         System.out.println("===========EXPERIENCE CANDIDATE============");

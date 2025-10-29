@@ -90,15 +90,11 @@ public class Candidates {
 
     @Override
     public String toString() {
-        return "Candidates{" +
-                "candidateId='" + candidateId + '\'' +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", birthDate=" + birthDate +
-                ", address='" + address + '\'' +
-                ", phoneNumber='" + phoneNumber + '\'' +
-                ", email='" + email + '\'' +
-                ", candidateType='" + candidateType + '\'' +
-                '}';
+        return this.firstName + " " + this.lastName + " | " +
+                this.birthDate + " | " +
+                this.address + " | " +
+                this.phoneNumber + " | " +
+                this.email + " | " +
+                this.candidateType;
     }
 }
