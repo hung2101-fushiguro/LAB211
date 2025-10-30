@@ -1,6 +1,6 @@
 package model;
 
-public class Candidates {
+public abstract class Candidates {
     private String candidateId;
     private String firstName;
     private String lastName;

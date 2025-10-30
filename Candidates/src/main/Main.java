@@ -1,16 +1,10 @@
 package main;
-
-
 import common.Validation;
 import controller.CandidateManager;
-
 public class Main {
-
     public static void main(String[] args) {
         CandidateManager manager = new CandidateManager();
-
         while (true) {
-
             System.out.println("\nCANDIDATE MANAGEMENT SYSTEM");
             System.out.println("1. Experience");
             System.out.println("2. Fresher");
@@ -18,8 +12,6 @@ public class Main {
             System.out.println("4. Searching");
             System.out.println("5. Exit");
             int choice = Validation.getInt("(Please choose 1 to Create, 4 to Search, 5 to Exit): ", 1, 5);
-
-
             switch (choice) {
                 case 1:
                     manager.CraeteCandidate(0);
@@ -36,6 +28,10 @@ public class Main {
                 case 5:
                     System.out.println("Exiting program. Goodbye!");
                     System.exit(0);
+                default:{
+                    System.out.println("Chose again!");
+                    break;
+                }
             }
         }
     }
